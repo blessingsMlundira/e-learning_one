@@ -1,0 +1,173 @@
+.Home {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #a53232;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Header Styles */
+.Home-header {
+  background-color: rgba(76, 175, 80, 0.8); /* Adjust the RGB values and opacity as needed */
+  color: white;
+  text-align: center;
+  padding: 2px 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  /* height: 80%; */
+  /* width: 60%; */
+  margin: 15px;
+  border-radius: 10px;
+  /* existing styles */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.Home-header.show {
+  opacity: 1;
+}
+
+
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
+  /* background-color: #f0f0f0; */
+  /* padding: 10px; */
+  
+}
+.inner-header {
+  opacity: 0.7;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #bb1b1b;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+}
+
+/* Reels Section Styles */
+.reels-section {
+  background-color: #f0f0f0;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.reel-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.reel {
+  flex: 0 0 30%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  opacity: 0; /* Initial opacity set to 0 */
+  transform: translateY(20px); /* Initial position below */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Add transitions for opacity and transform */
+  background-color: rgb(179, 117, 37);
+}
+
+.reel img {
+  width: 100%;
+  height: auto;
+}
+
+.reel p {
+  padding: 10px;
+  background-color: #a72121;
+  color: white;
+  margin: 0;
+}
+
+/* Articles Section Styles */
+.articles-section {
+  padding: 40px 0;
+  text-align: center;
+  margin-left: 50px;
+  background-color: white;
+}
+
+.article {
+  display: flex;
+  margin: 30px;
+}
+
+.article img {
+  width: 200px;
+  height: 150px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.article-content {
+  flex: 1;
+  text-align: left;
+}
+
+
+.article h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.article p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.read-more-link {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+/* Apply a class to trigger the fade-in effect */
+.Home-header.show {
+  opacity: 1;
+}
+/* Apply a class to trigger the slide-up effect */
+.reel.show {
+  opacity: 1;
+  transform: translateY(0); /* Slide up to the original position */
+}
+body {
+  background-color: rgb(255, 255, 255);
+}
+

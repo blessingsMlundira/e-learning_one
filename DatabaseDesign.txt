@@ -1,0 +1,39 @@
+Course Document:
+
+Store information about each course, including title, description, instructor, duration, price, etc.
+Define a schema for course content, such as lessons, quizzes, assignments, etc.
+Lesson Document:
+
+Break down courses into individual lessons with titles, descriptions, and content.
+Include a reference to the course it belongs to.
+Quiz Document:
+
+If your e-learning platform includes quizzes, create a document type for quizzes.
+Include questions, options, correct answers, and references to the related course.
+Assignment Document:
+
+Similar to quizzes, if your platform includes assignments, create a document type for assignments.
+Include instructions, due dates, and references to the related course.
+User Document:
+
+Store user information, including username, email, password (hashed), user type (student, lecturer, admin), etc.
+Enrollment Document:
+
+Track user enrollments in courses.
+Include information like enrollment date, progress, grades, etc.
+Review Document:
+
+Allow users to submit reviews or ratings for courses.
+Include fields for user, course, rating, and comments.
+Category Document:
+
+Categorize courses into different topics or subjects.
+Include fields like category name, description, and references to related courses.
+Resource Document:
+
+Store additional resources related to courses, such as PDFs, documents, or external links.
+Include fields for resource title, type, and a reference to the related course.
+Announcement Document:
+
+Keep users informed about announcements, updates, or news related to the e-learning platform.
+Include fields for title, content, date, etc.
