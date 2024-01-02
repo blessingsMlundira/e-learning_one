@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './TrainerHome.css';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import {createClient, Patch, Transaction} from '@sanity/client';
+import { createClient } from '@sanity/client';
 
 function LecturerInnerCourses() {
   const navigate = useNavigate();

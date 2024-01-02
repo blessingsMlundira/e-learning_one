@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, } from 'react-router-dom';
+// import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
 import Home from './Home';
 import BrowseCourses from './BrowseCourses';
@@ -10,7 +10,6 @@ import TrainerHome from './TrainerHome';
 import Enrollment from './Enrollment';
 import BrowseInnerCourses from './BrowseInnerCourses';
 import LoginPage from './LoginPage';
-import Logout from './Logout';
 import LecturerInnerCourses from './lecturerInnerCourses';
 
 import StudentHome from './StudentHome';
@@ -20,23 +19,10 @@ import StudentInnerCourses from './StudentInnerCourses';
 
 
 function App() {
-  const [showDropdown, setShowDropdown] = useState(false);
-  
-  const handleLogout = () => {
-    // Handle logout logic here
-    // For example, clear user session or token
-    // localStorage.removeItem('token');
-    // setShowDropdown(false);
-
-    
-    
-  };
 
   return (
     <Router>
       <div className="">
-
-        
 
         <div className="App">
           <Routes>

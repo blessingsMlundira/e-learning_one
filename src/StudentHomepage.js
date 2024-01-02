@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BrowseCourses.css';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import EnrollmentModal from './EnrollmentModal'; // Adjust the path accordingly
+// import EnrollmentModal from './EnrollmentModal'; // Adjust the path accordingly
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function StudentHomepage() {

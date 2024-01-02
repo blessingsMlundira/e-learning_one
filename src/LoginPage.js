@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Login.css';
-import {createClient, Patch, Transaction} from '@sanity/client';
+// import {createClient, Patch, Transaction} from '@sanity/client';
 
 function Login() {
   const [accountType, setAccountType] = useState('student');
@@ -69,8 +69,6 @@ function Login() {
           // navigation.navigate('LoginScreen');
             }
             }
-            
-      
             
           } catch (error) {
             console.error('Error:', error);

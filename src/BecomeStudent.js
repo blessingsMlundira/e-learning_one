@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Link, Route, Routes, useNavigate } from 'react-router-dom';
-import {createClient, Patch, Transaction} from '@sanity/client';
+import { createClient } from '@sanity/client';
 import './BecomeTrainer.css';
-import TrainerHome from './TrainerHome';
-import Home from './Home';
+
 
 
 
