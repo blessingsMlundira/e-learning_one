@@ -316,7 +316,9 @@ function TrainerHome() {
           const result = await client.create(courseData);
           console.log('Course created successfully:', result);
           // const notification = "Account created successfully, Login to your account";
-          window.location.reload();
+          //window.location.reload();
+          setCourses(prevCourses => [...prevCourses, result]);
+          
           // navigation.navigate('UserPage', { screen: 'UserPage' });
           return result;
           
