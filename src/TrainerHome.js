@@ -64,6 +64,35 @@ function TrainerHome() {
     setSelectedCourse(course);
     setUploadModalOpen(true);
   };
+  const handleDeleteClick = async (courseID) => {
+    try {
+      const client = createClient({
+        projectId: 'xsxj1ee7',
+        dataset: 'production',
+        useCdn: true,
+        apiVersion: '2021-10-21',
+        token: "skht0W9fpI08KAEDZ5arQCfzKh00dbhgTw8uydiDBWZpKPZohGpgZu2DXAIb7pKQyEacOLZuXxEqAfwF3MurwmelbBMiZES7enDhwYgdvuKlaiwqKZolJu0vfOY4v7GNkDNCYiXgPfgHIv6PjWMRm4Bsyro6JegNCRdk3djdNxFGTqEPbqCl", // Only if you want to update content with the client
+        ignoreBrowserTokenWarning: true
+      });
+
+      // Use the client to delete the course based on the courseID
+      await client
+        .delete({query: `*[_type == "course" && courseID== "${courseID}"]`})
+        .then(() => {
+          console.log('Course deleted successfully');
+          // Optionally, you can update the state or fetch courses again to reflect the deletion
+          setCourses((prevCourses) => prevCourses.filter((course) => course.courseID !== courseID));
+          // or refetch courses
+          // fetchData();
+        })
+        .catch((err) => {
+          console.error('Deletion failed:', err.message);
+          
+        });
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   const handleSaveAssignment = async (description, link) => {
     // Perform logic to save the assignment
@@ -349,7 +378,7 @@ function TrainerHome() {
               /> */}
             <div className="course-actions">
               {/* <button onClick={() => handleEditClick(course)}>Edit</button> */}
-              <button>Delete</button>
+              <button onClick={() => handleDeleteClick(course.courseID)}>Delete</button>
               <button onClick={() => handleOpenCourseClick(course)}>Open Course</button>
               <button onClick={() => handleCreateAnnouncementClick(course)}>Create Announcement</button> 
               <button onClick={() => handleUploadAssignmentClick(course)}>Upload Assignment</button>
