@@ -113,7 +113,7 @@ function Login() {
     // console.log('user signing in');
 
     // Redirect user based on their account type
-    if (accountType === 'lecturer') {
+    if (accountType === "lecturer") {
       navigate('/BecomeTrainer');
     } else {
     //   navigate('/BrowseCourses');
