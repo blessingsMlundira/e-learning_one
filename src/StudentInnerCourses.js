@@ -299,10 +299,10 @@ function LecturerInnerCourses() {
     <div className="TrainerHome">
        <div className="navbar">
           <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/BrowseCourses">Browse Programs</Link>
+            <Link to="/"><i class="fa fa-home"></i> Home</Link>
+            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
             {/* <Link to="/LoginPage">Login</Link> */}
-            <Link to="/LoginPage">Logout</Link>
+            <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Logout</Link>
                         
              
           </div>  
@@ -341,7 +341,7 @@ function LecturerInnerCourses() {
     </div>
       <h2>Your Topics</h2>
      
-      <div className="course-list">
+      <div className="course-list" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
   {courses.length > 0 ? (
     courses.map((course) => (
       <div key={course.id} className="course-card">
