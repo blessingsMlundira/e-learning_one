@@ -169,20 +169,23 @@ function StudentHome() {
     <div className="TrainerHome">
       <div className="navbar">
           <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/BrowseCourses">Browse Programs</Link>
+            <Link to="/"><i class="fa fa-home"></i> Home</Link>
+            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
             {/* <Link to="/LoginPage">Login</Link> */}
-            <Link to="/LoginPage">Logout</Link>
+            <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Logout</Link>
                         
              
           </div>  
         </div>
-      <h2>Your Courses</h2>
+      
+      <div style={{ padding: '10px', backgroundColor: 'white'}}>
+        <h2><span class="fa fa-graduation-cap"></span> Your Courses</h2>
+      </div>
       {/* <div className="">
         <button className="rounded-button" onClick={handleCreateClick}>Create Course</button>
 
       </div> */}
-      <div className="course-list">
+      <div className="course-list" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
         {courses.map(course => (
           <div key={course.courseID} className="course-card">
             <h3>{course.courseName}</h3>
@@ -193,8 +196,8 @@ function StudentHome() {
               {/* <button onClick={() => handleEditClick(course)}>Edit</button> */}
              
               <button onClick={() => handleOpenCourseClick(course)}>Open Course</button>
-              <button >View Announcements</button>
-              <button >Download Assignments</button>
+              {/* <button >View Announcements</button>
+              <button >Download Assignments</button> */}
             </div>
           </div>
         ))}
