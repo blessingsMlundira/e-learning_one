@@ -13,6 +13,7 @@ function TrainerHome() {
   console.log(userData);
   // const [cardsData, setCardsData] = useState([]);
   const [courses, setCourses] = useState([]);
+  const [reloadTrigger, setReloadTrigger] = useState(false);
   // const [courses, setCourses] = useState([
   //   { id: 1, title: 'Course 1', description: 'Description for Course 1' },
   //   { id: 2, title: 'Course 2', description: 'Description for Course 2' },
@@ -34,8 +35,7 @@ function TrainerHome() {
         if (Array.isArray(data.result)) {
           console.log("found some data!!!!!!");
           setCourses(data.result);
-          
-          
+            
         } else {
           console.error('Invalid data format:', data);
         }
@@ -45,7 +45,7 @@ function TrainerHome() {
     };
 
     fetchData();
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, [reloadTrigger]); // Empty dependency array to ensure the effect runs only once
 
 
 
@@ -127,7 +127,10 @@ function TrainerHome() {
     .create(assignmentData)
     .then(() => {
         console.log('assignment created');
-        window.location.reload();      
+        // window.location.reload();
+        // Trigger a reload after saving
+        setReloadTrigger(prevState => !prevState);
+    
     })
     .catch((err) => {
         console.error('creation failed: ', err.message)
@@ -220,6 +223,7 @@ function TrainerHome() {
           // const notification = "Account created successfully, Login to your account";
           // window.location.reload();
           // navigation.navigate('UserPage', { screen: 'UserPage' });
+          setReloadTrigger(prevState => !prevState);
           return result;
           
         } catch (error) {
@@ -316,10 +320,16 @@ function TrainerHome() {
           const result = await client.create(courseData);
           console.log('Course created successfully:', result);
           // const notification = "Account created successfully, Login to your account";
-          //window.location.reload();
-          setCourses(prevCourses => [...prevCourses, result]);
-          
+          // window.location.reload();
           // navigation.navigate('UserPage', { screen: 'UserPage' });
+          // Update the state with the new course
+          // setCourses(prevCourses => [...prevCourses, result]);
+           // Update the state with the new course
+          // setCourses(prevCourses => [...prevCourses, result]);
+          setReloadTrigger(prevState => !prevState);
+
+          // Close the modal or perform any other necessary actions
+          setCreateModalOpen(false);
           return result;
           
         } catch (error) {
@@ -354,15 +364,19 @@ function TrainerHome() {
     <div className="TrainerHome">
        <div className="navbar">
           <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/BrowseCourses">Browse Programs</Link>
+            <Link to="/"><i class="fa fa-home"></i> Home</Link>
+            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
             {/* <Link to="/LoginPage">Login</Link> */}
-            <Link to="/LoginPage">Logout</Link>
+            <Link to="/LoginPage"><i class="fa fa-sign-out"></i> Logout</Link>
                         
              {/* <Link to="/BecomeTrainer">Become a Trainer</Link> */}
           </div>  
         </div>
-      <h2>Your Courses</h2>
+      
+      <div style={{ padding: '5px', backgroundColor: 'white'}}>
+        <h2><span class="fa fa-graduation-cap"></span> Your Courses</h2>
+      </div>
+      <br />
       <div className="">
         <button className="rounded-button" onClick={handleCreateClick}><i className='fa fa-plus'></i> Create Course</button>
 
@@ -576,6 +590,8 @@ function CreateCourseModal({ newCourse, onInputChange, onSave, onClose }) {
         />
          <label>Select Program:</label>
               <select id="selectedProgram">
+              <option value="SCTP">ABMA Information Systems Level 4 </option>
+              <option value="SCTP">Management Information Systems Year 2(ICT - 215)</option>
               <option value="SCTP">Short Course Training Program</option>
                 <option value="PSM">BSc in Public Sector Management</option>
                 <option value="BBA">BCom in Business administration</option>
