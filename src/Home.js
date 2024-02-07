@@ -21,31 +21,39 @@ function Home() {
       {/* Navbar */}
       <div className="navbar">
         <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/BrowseCourses">Browse Programs</Link>
-          <Link to="/LoginPage">Login</Link>
+          <Link to="/"><i class="fa fa-home"></i> Home</Link>
+          <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
+          <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Login</Link>
         </div>
       </div>
 <center>
       {/* Header Section */}
       
-      <header className="Home-header"  style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/_MG_1242.JPG)` }}>
-        <div className="header-content">
-          <center>
-          
-        <div style={{ padding: '15px;',width: '30%', marginTop: '400px', backgroundColor: 'white', borderRadius: '20px' }}>
-        {/* <img style= {{ width: '70px' }} src={process.env.PUBLIC_URL + '/jubileeUni/logo_gif.gif'} alt="logo" /> */}
-          <h5 style={{color: 'white', margin: '0px', backgroundColor: 'rgb(179, 117, 37)'}}>Jubilee University E-Learning</h5>
-          <p>Unlock Your Potential with Unlimited Knowledge</p>
-      </div>
-      </center>
+      <header className="Home-header"  style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)`, height: '400px',width: '90%', boxShadow: '0 14px 6px rgba(0, 0, 0, 0.4)', paddingTop: '20px' }}>
+        
+        <div className="header-content" style={{  }}>
+          <div style={{ backgroundColor: 'rgba(0,0,0,0.5)',padding: '5px', borderRadius: '20px', boxShadow: "inset 0 0 5px #000000" }}>
+          <h1 style={{ backgroundColor: 'white', padding: '5px', borderRadius: '20px', borderBottom: "4px solid rgba(75, 92, 189, 1)" }}>
+  {`*Welcome*`}
+  <br />
+  <span style={{ color: 'orange', display: 'inline-block' }}>
+    {`Skill`}
+  </span>
+  <span style={{ color: 'green', display: 'inline-block' }}>
+    {`Space`}
+  </span>
+  {`: Unlock Your Full Potential`}
+</h1>
+
+<p style={{ color: 'white' }}>At SkillSpace, we believe that your potential knows no bounds. Our platform is not just an E-Learning app; it's your gateway to unlocking a world of possibilities and reaching new heights in your personal and professional journey.</p>
+          </div>
          
-          
+         <br /> 
 
           {/* Call-to-Action Buttons */}
           <div className="cta-buttons">
-            <Link to="/BrowseCourses" className="cta-button" >Browse Programs</Link>
-            <Link to="/LoginPage" className="cta-button">Login</Link>
+            <Link to="/BrowseCourses" className="cta-button" ><i class="fa fa-university"></i> Browse Programs</Link>
+            <Link to="/LoginPage" className="cta-button"><i class="fa fa-sign-in"></i> Login</Link>
           </div>
         </div>
       </header>
@@ -53,49 +61,30 @@ function Home() {
 
       {/* Reels Section (Facebook-like Reels) */}
       <section className="reels-section">
-        <h2>Explore the Jubilee Experience</h2>
+        <h2>Why SkillSpace?</h2>
         {/* Add your reels or interesting content here */}
         <div className="reel-container">
           {/* Reel 1 */}
           <div className="reel">
             <img src={process.env.PUBLIC_URL + '/jubileeUni/DSC_1383.JPG'} alt="Reel 1" />
-            <p>Discover Our Campus Life</p>
+            <p>Complete Learning Experience</p>
           </div>
           {/* Reel 2 */}
           <div className="reel">
             <img src={process.env.PUBLIC_URL + '/jubileeUni/_MG_1172.JPG'} alt="Reel 2" />
-            <p>Exciting Events and Activities</p>
+            <p>Flexible Learning, Anytime, Anywhere</p>
           </div>
           {/* Reel 3 */}
           <div className="reel">
             <img src={process.env.PUBLIC_URL + '/jubileeUni/_MG_1229.JPG'} alt="Reel 3" />
-            <p>Meet Our Outstanding Faculty</p>
+            <p>Expertly Crafted Courses</p>
           </div>
         </div>
       </section>
 
-      {/* Articles Section */}
-      <section className="articles-section" >
-        <h2>Latest Articles</h2>
-        {/* Example Article 1 */}
-        <div className="article" style={{ boxShadow: '5px 5px 5px 5px rgba(0, 0, 0, 0.1)', borderRadius: '7px' }}>
-          <img src={process.env.PUBLIC_URL + '/jubileeUni/DSC_1370.JPG'} alt="Article 1" />
-          <div className="article-content">
-            <h3>Embracing Innovation in Education</h3>
-            <p>Discover how Jubilee University is leading the way in innovative teaching methods...</p>
-            <Link to="/article1" className="read-more-link">Read More</Link>
-          </div>
-        </div>
-        {/* Example Article 2 */}
-        <div className="article" style={{ boxShadow: '8px 8px 8px 8px rgba(0, 0, 0, 0.1)', borderRadius: '7px' }}>
-          <img src={process.env.PUBLIC_URL + '/jubileeUni/DSC_1378.JPG'} alt="Article 2" />
-          <div className="article-content">
-            <h3>The Future of Learning: Online Education Trends</h3>
-            <p>Explore the latest trends shaping the future of online education...</p>
-            <Link to="/article2" className="read-more-link">Read More</Link>
-          </div>
-        </div>
-      </section>
+      
+      
+
     </div>
   );
 }
