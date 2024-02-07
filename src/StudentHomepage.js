@@ -134,25 +134,32 @@ function StudentHomepage() {
     <div className="BrowseCourses">
        <div className="navbar">
           <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/BrowseCourses">Browse Programs</Link>
+            <Link to="/"><i class="fa fa-home"></i> Home</Link>
+            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
             {/* <Link to="/LoginPage">Login</Link> */}
-            <Link to="/LoginPage">Logout</Link>
+            <Link to="/LoginPage"><i class="fa fa-sign-out"></i> Logout</Link>
                         
              
           </div>  
         </div>
     {/* Browse Programs Section */}
-    <div className="section">
-      <h2>Browse Programs</h2>
+    <div className="section" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
+      
+      <div style={{ padding: '10px', backgroundColor: 'white'}}>
+        <h2><span class="fa fa-graduation-cap"></span> Browse Programs</h2>
+      </div>
       <div className="course-list">
         
         {courses.map(course => (
           <div key={course.id} className="course-card">
-            <div style={{margin: '0px', backgroundColor: 'rgb(175, 58, 58)', padding: '3px', color: 'white', borderRadius: '6px' }}>
+            <div style={{margin: '0px', backgroundColor: 'rgba(75, 92, 189, 1)', padding: '3px', color: 'white', borderRadius: '6px' }}>
             <div >
-              <h3>{course.programName}</h3>
+              <center>
+              <h3><span class="fa fa-book"></span> <br />{course.programName}</h3>
 
+
+              </center>
+              
             </div>
             
              
