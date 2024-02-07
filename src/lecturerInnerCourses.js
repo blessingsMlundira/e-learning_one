@@ -12,6 +12,7 @@ function LecturerInnerCourses() {
   const [courses, setCourses] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
   const [assignments, setAssignments] = useState([]);
+  const [reloadTrigger, setReloadTrigger] = useState(false); // Added reloadTrigger state
   let PROJECT_ID = "xsxj1ee7";
   let DATASET = "production";
   let QUERY = encodeURIComponent(`*[_type == "topic" && courseID == "${courseCapturedData.courseID}"]`);
@@ -39,7 +40,7 @@ function LecturerInnerCourses() {
     };
 
     fetchData();
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, [reloadTrigger]); // Empty dependency array to ensure the effect runs only once
   let QUERY2 = encodeURIComponent(`*[_type == "courseAnnouncement" && courseID == "${courseCapturedData.courseID}"]`);
 
   // Compose the URL for your project's endpoint and add the query
@@ -66,7 +67,7 @@ function LecturerInnerCourses() {
     };
 
     fetchData2();
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, [reloadTrigger]); // Empty dependency array to ensure the effect runs only once
   let QUERY3 = encodeURIComponent(`*[_type == "courseAssignment" && courseID == "${courseCapturedData.courseID}"]`);
 
   // Compose the URL for your project's endpoint and add the query
@@ -93,7 +94,7 @@ function LecturerInnerCourses() {
     };
 
     fetchData3();
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, [reloadTrigger]); // Empty dependency array to ensure the effect runs only once
 
   
 
@@ -172,7 +173,8 @@ function LecturerInnerCourses() {
       .delete({query: `*[_type == "courseAssignment" && assignmentID== "${assignmentID}"]`})
       .then(() => {
           console.log('assignment deleted');
-          window.location.reload();
+          // window.location.reload();
+          setReloadTrigger(prevState => !prevState); // Update reloadTrigger to trigger a re-render
           
       })
       .catch((err) => {
@@ -264,7 +266,8 @@ function LecturerInnerCourses() {
             const result = await client.create(courseData);
             console.log('Topic created successfully:', result);
             // const notification = "Account created successfully, Login to your account";
-            window.location.reload();
+            // window.location.reload();
+            setReloadTrigger(prevState => !prevState); // Update reloadTrigger to trigger a re-render
             // navigation.navigate('UserPage', { screen: 'UserPage' });
             return result;
             
@@ -299,10 +302,10 @@ function LecturerInnerCourses() {
     <div className="TrainerHome">
        <div className="navbar">
           <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/BrowseCourses">Browse Programs</Link>
+            <Link to="/"><i class="fa fa-home"></i> Home</Link>
+            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
             {/* <Link to="/LoginPage">Login</Link> */}
-            <Link to="/LoginPage">Logout</Link>
+            <Link to="/LoginPage"><i class="fa fa-sign-out"></i> Logout</Link>
                         
              
           </div>  
