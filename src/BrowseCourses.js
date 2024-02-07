@@ -131,9 +131,11 @@ function BrowseCourses() {
     <div className="BrowseCourses">
       <div className="navbar">
           <div className="nav-links">
-            <Link to="/">Home</Link>
-            <Link to="/BrowseCourses">Browse Programs</Link>
-            <Link to="/LoginPage">Login</Link>
+            <Link to="/"><i class="fa fa-home"></i> Home</Link>
+            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
+            <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Login</Link>
+        
+            
             {/* <Link to="/LoginPage">Logout</Link> */}
                        
             {/* <Link to="/BecomeTrainer">Become a Trainer</Link> */}
@@ -141,23 +143,28 @@ function BrowseCourses() {
         </div>
       
     {/* Browse Programs Section */}
-    <div className="section">
-      <h2>Browse Programs</h2>
+    <div className="section" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
+      <div style={{ padding: '10px', backgroundColor: 'white'}}>
+        <h2><span class="fa fa-graduation-cap"></span> Browse Programs</h2>
+      </div>
+      
       <div className="course-list">
         {courses.map(course => (
           <div key={course.id} className="course-card">
-            <div style={{ backgroundColor: 'rgb(175, 58, 58)', padding: '3px', color: 'white', borderRadius: '6px' }}>
+            <div style={{ backgroundColor: 'rgba(75, 92, 189, 1)', padding: '3px', color: 'white', borderRadius: '6px' }}>
             
-            <h3>{course.programName}</h3>
+            <center>
+            <h3><span class="fa fa-book"></span> <br />{course.programName}</h3>
+            </center>
              
             </div>
             
             
-            <p><strong>Duration:</strong> {course.duration}</p>
+            <p><strong><span class="fa fa-clock"></span> Duration:</strong> {course.duration}</p>
             <p><strong>Description:</strong> {course.description}</p>
-            <p><strong>Fees:</strong> k{course.fees}</p>
+            <p><strong><span class="fa fa-money-bill-alt"></span> Fees:</strong> k{course.fees}</p>
             <center>
-                <button className="rounded-button" onClick={handleCreateClick}>Open Program</button>
+                <button className="rounded-button" onClick={handleCreateClick}><span class="fa fa-lock-open"></span> Open Program</button>
             
             </center>
             
