@@ -5,8 +5,15 @@
 /* Navbar Styles */
 .navbar {
   background-color: #4b5cbd;
+  border: 2px solid #b48327;
   padding: 10px;
   text-align: center;
+  position: fixed; /* Fix the navbar at the top */
+  width: 100%; /* Make the navbar full width */
+  top: 0; /* Align the navbar at the top of the viewport */
+  z-index: 1000; /* Ensure the navbar is above other content */
+  
+  
 }
 
 .nav-links {
@@ -34,6 +41,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-color: rgba(75, 92, 189, 0.8);
+  background-attachment: fixed;
   margin: 5px;
   border-radius: 10px;
   opacity: 0;
@@ -99,6 +107,8 @@ h1, p {
   transform: translateY(20px);
   opacity: 0;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, background-color 0.3s ease-in-out;
+  border: 1px solid orange;
+  border-radius: 18px;
 }
 
 .Home-header.show .cta-button {
