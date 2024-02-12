@@ -26,15 +26,18 @@ function Home() {
           <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Login</Link>
         </div>
       </div>
+      <br /><br /><br /><br /><br />
 <center>
       {/* Header Section */}
       
-      <header className="Home-header"  style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)`, height: '400px',width: '90%', boxShadow: '0 14px 6px rgba(0, 0, 0, 0.4)', paddingTop: '20px' }}>
+      <header className="Home-header"  style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)`,height: '400px',width: '90%', boxShadow: '0 14px 6px rgba(0, 0, 0, 0.4)', paddingTop: '20px' }}>
         
         <div className="header-content" style={{  }}>
+          
           <div style={{ backgroundColor: 'rgba(0,0,0,0.5)',padding: '5px', borderRadius: '20px', boxShadow: "inset 0 0 5px #000000" }}>
-          <h1 style={{ backgroundColor: 'white', padding: '5px', borderRadius: '20px', borderBottom: "4px solid rgba(75, 92, 189, 1)" }}>
-  {`*Welcome*`}
+         
+        <h1 style={{ backgroundColor: 'white', padding: '5px', borderRadius: '20px', borderBottom: "4px solid rgba(75, 92, 189, 1)" }}>
+  
   <br />
   <span style={{ color: 'orange', display: 'inline-block' }}>
     {`Skill`}
@@ -42,8 +45,10 @@ function Home() {
   <span style={{ color: 'green', display: 'inline-block' }}>
     {`Space`}
   </span>
-  {`: Unlock Your Full Potential`}
+  <br />
+  {`Unlock Your Full Potential`}
 </h1>
+          
 
 <p style={{ color: 'white' }}>At SkillSpace, we believe that your potential knows no bounds. Our platform is not just an E-Learning app; it's your gateway to unlocking a world of possibilities and reaching new heights in your personal and professional journey.</p>
           </div>
@@ -52,12 +57,14 @@ function Home() {
 
           {/* Call-to-Action Buttons */}
           <div className="cta-buttons">
-            <Link to="/BrowseCourses" className="cta-button" ><i class="fa fa-university"></i> Browse Programs</Link>
-            <Link to="/LoginPage" className="cta-button"><i class="fa fa-sign-in"></i> Login</Link>
+            <Link to="/BrowseCourses" className="cta-button" style={{ borderTopRightRadius: '0px', borderBottomRightRadius: '0px' }}><i class="fa fa-university"></i> Browse Programs</Link>
+            <Link to="/LoginPage" className="cta-button" style={{ borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px' }}><i class="fa fa-sign-in"></i> Login</Link>
           </div>
         </div>
       </header>
+      
 </center>
+
 
       {/* Reels Section (Facebook-like Reels) */}
       <section className="reels-section">
