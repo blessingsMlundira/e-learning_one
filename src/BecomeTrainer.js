@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as useNavigate } from 'react-router-dom';
-
+import { BrowserRouter as Router, Link, Route, Routes, useNavigate } from 'react-router-dom';
 import './BecomeTrainer.css';
 import {createClient} from '@sanity/client';
 
