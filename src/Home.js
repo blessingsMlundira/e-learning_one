@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   useEffect(() => {
     // Trigger the fade-in effect for the header after the component mounts
     const header = document.querySelector('.Home-header');
@@ -16,54 +18,59 @@ function Home() {
       }, index * 500); // Add a delay for each reel
     });
   }, []);
+
   return (
     <div className="Home">
       {/* Navbar */}
-      <div className="navbar">
+      <div className={`navbar ${isNavOpen ? 'open' : ''}`}>
         <div className="nav-links">
-          <Link to="/"><i class="fa fa-home"></i> Home</Link>
-          <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
-          <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Login</Link>
+          <Link to="/"><i className="fa fa-home"></i> Home</Link>
+          <Link to="/BrowseCourses"><i className="fa fa-university"></i> Browse Programs</Link>
+          <Link to="/LoginPage"><i className="fa fa-sign-in"></i> Login</Link>
+        </div>
+        <div className="toggle-nav" onClick={() => setIsNavOpen(!isNavOpen)}>
+          <i style={{ color: "white"}} className={`fa ${isNavOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </div>
       </div>
+
       <br /><br /><br /><br /><br />
-<center>
-      {/* Header Section */}
-      
-      <header className="Home-header"  style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)`,height: '400px',width: '90%', boxShadow: '0 14px 6px rgba(0, 0, 0, 0.4)', paddingTop: '20px' }}>
-        
-        <div className="header-content" style={{  }}>
-          
-          <div style={{ backgroundColor: 'rgba(0,0,0,0.5)',padding: '5px', borderRadius: '20px', boxShadow: "inset 0 0 5px #000000" }}>
-         
-        <h1 style={{ backgroundColor: 'white', padding: '5px', borderRadius: '20px', borderBottom: "4px solid rgba(75, 92, 189, 1)" }}>
-  
-  <br />
-  <span style={{ color: 'orange', display: 'inline-block' }}>
-    {`Skill`}
-  </span>
-  <span style={{ color: 'green', display: 'inline-block' }}>
-    {`Space`}
-  </span>
-  <br />
-  {`Unlock Your Full Potential`}
-</h1>
-          
+      <center>
+        {/* Header Section */}
 
-<p style={{ color: 'white' }}>At SkillSpace, we believe that your potential knows no bounds. Our platform is not just an E-Learning app; it's your gateway to unlocking a world of possibilities and reaching new heights in your personal and professional journey.</p>
-          </div>
-         
-         <br /> 
+        <header className="Home-header" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)`, height: '400px', width: '90%', boxShadow: '0 14px 6px rgba(0, 0, 0, 0.4)', paddingTop: '20px' }}>
 
-          {/* Call-to-Action Buttons */}
-          <div className="cta-buttons">
-            <Link to="/BrowseCourses" className="cta-button" style={{ borderTopRightRadius: '0px', borderBottomRightRadius: '0px' }}><i class="fa fa-university"></i> Browse Programs</Link>
-            <Link to="/LoginPage" className="cta-button" style={{ borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px' }}><i class="fa fa-sign-in"></i> Login</Link>
+          <div className="header-content" style={{}}>
+
+            <div style={{ backgroundColor: 'rgba(0,0,0,0.5)', padding: '5px', borderRadius: '20px', boxShadow: "inset 0 0 5px #000000" }}>
+
+              <h1 style={{ backgroundColor: 'white', padding: '5px', borderRadius: '20px', borderBottom: "4px solid rgba(75, 92, 189, 1)" }}>
+
+                <br />
+                <span style={{ color: 'orange', display: 'inline-block' }}>
+                  {`Skill`}
+                </span>
+                <span style={{ color: 'green', display: 'inline-block' }}>
+                  {`Space`}
+                </span>
+                <br />
+                {`Unlock Your Full Potential`}
+              </h1>
+
+
+              <p style={{ color: 'white' }}>At SkillSpace, we believe that your potential knows no bounds. Our platform is not just an E-Learning app; it's your gateway to unlocking a world of possibilities and reaching new heights in your personal and professional journey.</p>
+            </div>
+
+            <br />
+
+            {/* Call-to-Action Buttons */}
+            <div className="cta-buttons">
+              <Link to="/BrowseCourses" className="cta-button" style={{ borderTopRightRadius: '0px', borderBottomRightRadius: '0px' }}><i className="fa fa-university"></i> Browse Programs</Link>
+              <Link to="/LoginPage" className="cta-button" style={{ borderTopLeftRadius: '0px', borderBottomLeftRadius: '0px' }}><i className="fa fa-sign-in"></i> Login</Link>
+            </div>
           </div>
-        </div>
-      </header>
-      
-</center>
+        </header>
+
+      </center>
 
 
       {/* Reels Section (Facebook-like Reels) */}
@@ -89,8 +96,7 @@ function Home() {
         </div>
       </section>
 
-      
-      
+
 
     </div>
   );
