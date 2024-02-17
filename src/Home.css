@@ -38,7 +38,7 @@
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: #f9f9f9;
+    background-color: rgba(60, 73, 150, 0.8);
     width: 100%;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -51,6 +51,7 @@
   .nav-links a {
     margin: 10px 0;
     opacity: 0; /* Initially hidden */
+    color: black;
   }
 
   .toggle-nav {
