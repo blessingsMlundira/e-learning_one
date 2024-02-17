@@ -2,35 +2,99 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Navbar Styles */
 .navbar {
-  background-color: #4b5cbd;
-  border: 2px solid #b48327;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  text-align: center;
-  position: fixed; /* Fix the navbar at the top */
-  width: 100%; /* Make the navbar full width */
-  top: 0; /* Align the navbar at the top of the viewport */
-  z-index: 1000; /* Ensure the navbar is above other content */
-  
-  
+  position: fixed; /* Added position relative for absolute positioning of nav-links */
+  z-index: 1000;
 }
 
 .nav-links {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-links a {
-  color: white;
+  margin-right: 20px;
+  color: rgb(253, 241, 241);
   text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out; /* Added opacity transition */
 }
 
-.nav-links a:hover {
-  color: rgba(75, 92, 189, 0.8);
+.toggle-nav {
+  cursor: pointer;
+  display: none; /* Initially hidden on larger screens */
 }
+
+@media only screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links on smaller screens */
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #f9f9f9;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out; /* Added opacity transition */
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+    opacity: 0; /* Initially hidden */
+  }
+
+  .toggle-nav {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  .navbar.open .nav-links {
+    display: flex; /* Show links when navbar is open */
+    opacity: 1; /* Make links visible */
+  }
+
+  .navbar.open .nav-links a {
+    opacity: 1; /* Make links visible */
+  }
+
+  /* Keyframe animation for link appearance */
+  @keyframes fadeInLinks {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .navbar.open .nav-links a {
+    animation: fadeInLinks 0.3s ease forwards; /* Apply animation */
+    animation-delay: calc(var(--index) * 0.1s); /* Delay each link's animation */
+  }
+}
+
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .toggle-nav {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  
+
+
 
 /* Header Styles */
 .Home-header {
