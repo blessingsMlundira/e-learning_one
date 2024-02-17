@@ -82,6 +82,7 @@
   .navbar.open .nav-links a {
     animation: fadeInLinks 0.3s ease forwards; /* Apply animation */
     animation-delay: calc(var(--index) * 0.1s); /* Delay each link's animation */
+    color: black;
   }
 }
 
