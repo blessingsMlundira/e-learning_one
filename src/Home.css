@@ -9,6 +9,7 @@
   padding: 10px;
   position: fixed; /* Added position relative for absolute positioning of nav-links */
   z-index: 1000;
+  background-color: rgba(60, 73, 150, 0.8);
 }
 
 .nav-links {
