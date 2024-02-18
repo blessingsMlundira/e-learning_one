@@ -132,16 +132,18 @@ function StudentHomepage() {
 
   return (
     <div className="BrowseCourses">
-       <div className="navbar">
-          <div className="nav-links">
-            <Link to="/"><i class="fa fa-home"></i> Home</Link>
-            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
-            {/* <Link to="/LoginPage">Login</Link> */}
-            <Link to="/LoginPage"><i class="fa fa-sign-out"></i> Logout</Link>
-                        
-             
-          </div>  
+        {/* Navbar */}
+      <div className={`navbar ${isNavOpen ? 'open' : ''}`}>
+        <div className="nav-links">
+          <Link to="/"><i className="fa fa-home"></i> Home</Link>
+          <Link to="/BrowseCourses"><i className="fa fa-university"></i> Browse Programs</Link>
+          <Link to="/LoginPage"><i className="fa fa-sign-in"></i> Login</Link>
         </div>
+        <div className="toggle-nav" onClick={() => setIsNavOpen(!isNavOpen)}>
+          <i style={{ color: "white"}} className={`fa ${isNavOpen ? 'fa-times' : 'fa-bars'}`}></i>
+        </div>
+      </div>
+<br><br>
     {/* Browse Programs Section */}
     <div className="section" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
       
