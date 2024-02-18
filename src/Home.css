@@ -46,13 +46,13 @@
     z-index: 1;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease-in-out; /* Added opacity transition */
-    color: white;
+    color: black;
   }
 
   .nav-links a {
     margin: 10px 0;
     opacity: 0; /* Initially hidden */
-    color: black;
+    color: white;
   }
 
   .toggle-nav {
