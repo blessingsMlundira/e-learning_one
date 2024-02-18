@@ -39,14 +39,14 @@
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: rgba(60, 73, 150, 0.8);
+    background-color: rgba(60, 73, 150, 0.9);
     width: 100%;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 1;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease-in-out; /* Added opacity transition */
-    color: black;
+    color: white;
   }
 
   .nav-links a {
