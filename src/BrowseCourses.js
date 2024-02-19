@@ -5,6 +5,21 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 function BrowseCourses() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  useEffect(() => {
+    // Trigger the fade-in effect for the header after the component mounts
+    const header = document.querySelector('.Home-header');
+    header.classList.add('show');
+
+    // Trigger the slide-up effect for each reel after a delay
+    const reels = document.querySelectorAll('.reel');
+    reels.forEach((reel, index) => {
+      setTimeout(() => {
+        reel.classList.add('show');
+      }, index * 500); // Add a delay for each reel
+    });
+  }, []);
     const [announcements, setAnnouncements] = useState([]);
  
   
@@ -129,18 +144,17 @@ function BrowseCourses() {
     
     
     <div className="BrowseCourses">
-      <div className="navbar">
-          <div className="nav-links">
-            <Link to="/"><i class="fa fa-home"></i> Home</Link>
-            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
-            <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Login</Link>
-        
-            
-            {/* <Link to="/LoginPage">Logout</Link> */}
-                       
-            {/* <Link to="/BecomeTrainer">Become a Trainer</Link> */}
-          </div>  
+      {/* Navbar */}
+      <div className={`navbar ${isNavOpen ? 'open' : ''}`}>
+        <div className="nav-links">
+          <Link to="/"><i className="fa fa-home"></i> Home</Link>
+          <Link to="/BrowseCourses"><i className="fa fa-university"></i> Browse Programs</Link>
+          <Link to="/LoginPage"><i className="fa fa-sign-in"></i> Login</Link>
         </div>
+        <div className="toggle-nav" onClick={() => setIsNavOpen(!isNavOpen)}>
+          <i style={{ color: "white"}} className={`fa ${isNavOpen ? 'fa-times' : 'fa-bars'}`}></i>
+        </div>
+      </div>
       
     {/* Browse Programs Section */}
     <div className="section" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
