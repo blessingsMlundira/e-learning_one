@@ -7,8 +7,7 @@
   .trainer-form {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
-    width: 100%;
+    max-width: 300px;
     margin: 0 auto;
   }
   
