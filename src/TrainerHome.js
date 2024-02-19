@@ -590,8 +590,8 @@ function CreateCourseModal({ newCourse, onInputChange, onSave, onClose }) {
         />
          <label>Select Program:</label>
               <select id="selectedProgram">
-              <option value="SCTP">ABMA Information Systems Level 4 </option>
-              <option value="SCTP">Management Information Systems Year 2(ICT - 215)</option>
+              <option value="MISlevel4">ABMA Information Systems Level 4 </option>
+              <option value="CIT-215">Business Information Systems Year 2(ICT - 215)</option>
               <option value="SCTP">Short Course Training Program</option>
                 <option value="PSM">BSc in Public Sector Management</option>
                 <option value="BBA">BCom in Business administration</option>
