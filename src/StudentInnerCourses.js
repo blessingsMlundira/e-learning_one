@@ -294,19 +294,22 @@ function LecturerInnerCourses() {
     
     navigate('/LecturerInnerCourses');
   };
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <div className="TrainerHome">
-       <div className="navbar">
+       {/* Navbar */}
+       <div className={`navbar ${isNavOpen ? 'open' : ''}`}>
           <div className="nav-links">
-            <Link to="/"><i class="fa fa-home"></i> Home</Link>
-            <Link to="/BrowseCourses"><i class="fa fa-university"></i> Browse Programs</Link>
-            {/* <Link to="/LoginPage">Login</Link> */}
-            <Link to="/LoginPage"><i class="fa fa-sign-in"></i> Logout</Link>
-                        
-             
-          </div>  
+            <Link to="/"><i className="fa fa-home"></i> Home</Link>
+            <Link to="/BrowseCourses"><i className="fa fa-university"></i> Browse Programs</Link>
+            <Link to="/LoginPage"><i className="fa fa-sign-in"></i> Login</Link>
+          </div>
+        <div className="toggle-nav" onClick={() => setIsNavOpen(!isNavOpen)}>
+          <i style={{ color: "white"}} className={`fa ${isNavOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </div>
+      </div>
+      <br /><br /><br /><br />
     <div className="announcements-section">
     <h4>Assignments</h4>
   {assignments.length > 0 ? (
@@ -341,7 +344,7 @@ function LecturerInnerCourses() {
     </div>
       <h2>Your Topics</h2>
      
-      <div className="course-list" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
+      <div className="course-list" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)`, backgroundAttachment: 'fixed' }}>
   {courses.length > 0 ? (
     courses.map((course) => (
       <div key={course.id} className="course-card">
