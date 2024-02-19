@@ -6,10 +6,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px;
+  padding: 10px;
   position: fixed; /* Added position relative for absolute positioning of nav-links */
   z-index: 1000;
-  background-color: rgba(60, 73, 150, 0.9);
+  background-color: rgba(75, 92, 189, 0.95);
 }
 
 .nav-links {
@@ -39,20 +39,18 @@
     position: absolute;
     top: 60px;
     left: 0;
-    background-color: rgba(60, 73, 150, 0.9);
+    background-color: rgba(75, 92, 189, 0.95);
     width: 100%;
     padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.3s ease-in-out; /* Added opacity transition */
-    color: black;
   }
 
   .nav-links a {
     margin: 10px 0;
     opacity: 0; /* Initially hidden */
-    color: white;
   }
 
   .toggle-nav {
@@ -83,7 +81,6 @@
   .navbar.open .nav-links a {
     animation: fadeInLinks 0.3s ease forwards; /* Apply animation */
     animation-delay: calc(var(--index) * 0.1s); /* Delay each link's animation */
-    color: black;
   }
 }
 
@@ -96,10 +93,6 @@
     display: block; /* Show the toggle button on smaller screens */
   }
 
-  
-
-
-
 /* Header Styles */
 .Home-header {
   color: white;
@@ -108,7 +101,7 @@
   /* background-size: center; */
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: rgba(75, 92, 189, 0.8);
+  background-color: rgba(75, 92, 189, 0.95);
   background-attachment: fixed;
   margin: 5px;
   border-radius: 10px;
