@@ -129,6 +129,7 @@ function StudentHomepage() {
     //   handleSave(selectedYear);
       
   };
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
     <div className="BrowseCourses">
@@ -143,10 +144,10 @@ function StudentHomepage() {
           <i style={{ color: "white"}} className={`fa ${isNavOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </div>
       </div>
-<br><br>
+
     {/* Browse Programs Section */}
     <div className="section" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/jubileeUni/landingBanner.png)` }}>
-      
+      <br /><br />
       <div style={{ padding: '10px', backgroundColor: 'white'}}>
         <h2><span class="fa fa-graduation-cap"></span> Browse Programs</h2>
       </div>
